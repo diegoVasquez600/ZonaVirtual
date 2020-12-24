@@ -10,31 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ZonaClient.IU;
+using ZonaClient.ViewModels;
 
-namespace ZonaClient
+namespace ZonaClient.IU
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Transaction.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Transaction : Window
     {
         /// <summary>
-        /// Constructor calls the Method <c>InitializeComponent()</c>
+        /// Constructor Transaction
         /// </summary>
-        public MainWindow()
+        /// <remarks>
+        /// Initialize the Method InitializeComponent, and the BindingContext for the ViewModel TransactionViewModel
+        /// </remarks>
+        public Transaction()
         {
             InitializeComponent();
+            DataContext = new TransactionViewModel(); 
         }
-
-        #region Events
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Transaction transaction = new Transaction();
-            transaction.ShowDialog();
-        } 
-        #endregion
     }
 }

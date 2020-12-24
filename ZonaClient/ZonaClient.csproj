@@ -10,4 +10,8 @@
     <DocumentationFile>C:\Users\diego\source\repos\ZonaVirtual\ZonaClient\ZonaClient.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
 </Project>

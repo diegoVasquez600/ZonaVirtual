@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZonaClient</name>
+    </assembly>
+    <members>
+        <member name="T:ZonaClient.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="F:ZonaClient.App.ZonaPruebaUrl">
+            <summary>
+            ZonaBackendUrl 
+            </summary>
+        </member>
+        <member name="M:ZonaClient.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ZonaClient.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:ZonaClient.IU.Transaction">
+            <summary>
+            Interaction logic for Transaction.xaml
+            </summary>
+            <summary>
+            Transaction
+            </summary>
+        </member>
+        <member name="M:ZonaClient.IU.Transaction.#ctor">
+            <summary>
+            Constructor Transaction
+            </summary>
+            <remarks>
+            Initialize the Method InitializeComponent, and the BindingContext for the ViewModel TransactionViewModel
+            </remarks>
+        </member>
+        <member name="M:ZonaClient.IU.Transaction.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ZonaClient.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:ZonaClient.MainWindow.#ctor">
+            <summary>
+            Constructor calls the Method <c>InitializeComponent()</c>
+            </summary>
+        </member>
+        <member name="M:ZonaClient.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ZonaClient.Models.Prueba">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ZonaClient.Services.DataStorePrueba">
+            <summary>
+            Class DataStorePrueba that connects to the ZonaVirtual API, implements <c>IPrueba</c> insterface.
+            </summary>
+        </member>
+        <member name="M:ZonaClient.Services.DataStorePrueba.#ctor">
+            <summary>
+            Constructor DataStorePrueba Initialize the HTTP Client
+            </summary>
+        </member>
+        <member name="M:ZonaClient.Services.DataStorePrueba.GetDataAsync">
+            <summary>
+            Method GetDataAsync get data from the backend in postMethod
+            </summary>
+            <returns>
+            if the execution is correct returns a task else returns an exception message
+            </returns>
+        </member>
+        <member name="T:ZonaClient.Services.Interfaces.IPrueba`1">
+            <summary>
+            Interface IPrueba
+            </summary>
+            <typeparam name="Prueba">Prueba Model</typeparam>
+        </member>
+        <member name="M:ZonaClient.Services.Interfaces.IPrueba`1.GetDataAsync">
+            <summary>
+            Method GetDataAsync 
+            </summary>
+            <returns>
+            if the execution is correct returns a task else returns an exception message
+            </returns>
+        </member>
+        <member name="T:ZonaClient.ViewModels.BaseViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:ZonaClient.ViewModels.BaseViewModel.PropertyChanged">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ZonaClient.ViewModels.BaseViewModel.IsBusy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZonaClient.ViewModels.BaseViewModel.OnPropertyChanged(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="T:ZonaClient.ViewModels.TransactionViewModel">
+            <summary>
+            Class TransactionViewModel
+            </summary>
+            <remarks>
+            Is the ViewModel for Transaction.xaml
+            </remarks>
+        </member>
+        <member name="P:ZonaClient.ViewModels.TransactionViewModel.PruebaCollection">
+            <summary>
+            Propertie PruebaCollection is the collection of data from the response of Zona prueba Backend
+            </summary>
+        </member>
+        <member name="M:ZonaClient.ViewModels.TransactionViewModel.#ctor">
+            <summary>
+            Constructor TransactionViewModel 
+            </summary>
+            <remarks>
+            Initialize the Method 
+            </remarks>
+        </member>
+        <member name="M:ZonaClient.ViewModels.TransactionViewModel.CargarDataAsync">
+            <summary>
+            
+            </summary>
+            <returns>
+            if the execution is correct returns and ObservableCollection of the model Prueba else returns Null
+            </returns>
+        </member>
+    </members>
+</doc>

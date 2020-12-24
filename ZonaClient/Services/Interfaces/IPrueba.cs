@@ -18,6 +18,6 @@ namespace ZonaClient.Services.Interfaces
         /// <returns>
         /// if the execution is correct returns a task else returns an exception message
         /// </returns>
-        Task<Prueba> GetDataAsync();
+        Task<IEnumerable<Prueba>> GetDataAsync();
     }
 }

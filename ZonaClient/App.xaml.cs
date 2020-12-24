@@ -16,7 +16,7 @@ namespace ZonaClient
         /// <summary>
         /// ZonaBackendUrl 
         /// </summary>
-        public static string ZonaBackendUrl = "https://qklyapi.azurewebsites.net/api/";
+        public static string ZonaPruebaUrl = "http://pbiz.zonavirtual.com/api/Prueba/Consulta";
 
     }
 }
