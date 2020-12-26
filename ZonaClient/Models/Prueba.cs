@@ -11,18 +11,18 @@ namespace ZonaClient.Models
     /// </summary>
     public class Prueba
     {
-        internal int ComercioCodigo { get; set; }
-        internal string ComercioNombre { get; set; }
-        internal string ComercioNit { get; set; }
-        internal string ComercioDireccion { get; set; }
-        internal int TransCodigo { get; set; }
-        internal int TransMedioPago { get; set; }
-        internal int TransEstado { get; set; }
-        internal float TransTotal { get; set; }
-        internal DateTime TransFecha { get; set; }
-        internal string TransConcepto { get; set; }
-        internal string UsuarioIdentificacion { get; set; }
-        internal string UsuarioNombre { get; set; }
-        internal string UsuarioEmail { get; set; }
+            public int Comercio_codigo { get; set; }
+            public string Comercio_nombre { get; set; }
+            public string Comercio_nit { get; set; }
+            public string Comercio_direccion { get; set; }
+            public string Trans_codigo { get; set; }
+            public int Trans_medio_pago { get; set; }
+            public int Trans_estado { get; set; }
+            public float Trans_total { get; set; }
+            public string Trans_fecha { get; set; }
+            public string Trans_concepto { get; set; }
+            public string Usuario_identificacion { get; set; }
+            public string Usuario_nombre { get; set; }
+            public string Usuario_email { get; set; }
     }
 }

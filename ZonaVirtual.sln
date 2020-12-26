@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{6ED2
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ZonaDB", "ZonaDB\ZonaDB.sqlproj", "{18EA39E7-3043-4E7E-A234-20B493D854F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZonaClient", "ZonaClient\ZonaClient.csproj", "{E3822C15-78AC-4284-AB12-4B6BFAA72EC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZonaClient", "ZonaClient\ZonaClient.csproj", "{E3822C15-78AC-4284-AB12-4B6BFAA72EC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zona.API", "Zona.API\Zona.API.csproj", "{3E0A28AA-2EF4-4D76-9EE9-9040CCD22687}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zona.API", "Zona.API\Zona.API.csproj", "{3E0A28AA-2EF4-4D76-9EE9-9040CCD22687}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZonaWebClient", "ZonaWebClient\ZonaWebClient.csproj", "{D3714E3F-8AF9-40E8-9839-6C3F206C903A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZonaWebClient", "ZonaWebClient\ZonaWebClient.csproj", "{D3714E3F-8AF9-40E8-9839-6C3F206C903A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5EE143E5-5DAD-4D13-801C-8DEF885742C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{D3714E3F-8AF9-40E8-9839-6C3F206C903A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3714E3F-8AF9-40E8-9839-6C3F206C903A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3714E3F-8AF9-40E8-9839-6C3F206C903A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE143E5-5DAD-4D13-801C-8DEF885742C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE143E5-5DAD-4D13-801C-8DEF885742C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE143E5-5DAD-4D13-801C-8DEF885742C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE143E5-5DAD-4D13-801C-8DEF885742C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

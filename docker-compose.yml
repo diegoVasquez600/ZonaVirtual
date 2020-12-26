@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  zonawebclient:
+    image: ${DOCKER_REGISTRY-}zonawebclient
+    build:
+      context: .
+      dockerfile: ZonaWebClient\Dockerfile
+
+  zona.api:
+    image: ${DOCKER_REGISTRY-}zonaapi
+    build:
+      context: .
+      dockerfile: Zona.API\Dockerfile
+

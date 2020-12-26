@@ -28,7 +28,7 @@ namespace ZonaClient.Services
         {
             client = new HttpClient
             {
-                BaseAddress = new Uri($"{App.ZonaPruebaUrl}/")
+                BaseAddress = new Uri($"{App.ZonaPruebaUrl}Prueba/")
             };
             data = new List<Prueba>();
         }
@@ -44,7 +44,7 @@ namespace ZonaClient.Services
         public async Task<IEnumerable<Prueba>> GetDataAsync()
         {
             var serializedItem = "noneHere";
-            var response = await client.PostAsync($"/", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            var response = await client.PostAsync($"Consulta", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
             data = JsonConvert.DeserializeObject<IEnumerable<Prueba>>(await response.Content.ReadAsStringAsync());
             return data;
         } 

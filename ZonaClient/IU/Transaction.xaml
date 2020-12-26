@@ -11,7 +11,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Label Content="{Binding ComercioCodigo}"/>
+                        <Label Content="{Binding Comercio_codigo}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

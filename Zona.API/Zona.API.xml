@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Zona.API</name>
+    </assembly>
+    <members>
+        <member name="M:Zona.API.Controllers.ComercioController.InsertComercio(Zona.API.Models.Comercio)">
+            <summary>
+            
+            </summary>
+            <param name="value">
+            
+            </param>
+            <remarks>
+             Using POST api/Comercio/InsertComercio
+            </remarks>
+        </member>
+        <member name="T:Zona.API.Models.Comercio">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Zona.API.Models.Comercio.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Comercio.ComercioCodigo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Comercio.ComericoNombre">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Comercio.ComercioNit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Comercio.ComercioDireccion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Comercio.ComercioPassword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Comercio.ComercioSalt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Comercio.Transaccions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Zona.API.Models.Transaccion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.TransCodigo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.TransMedioPago">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.TransEstado">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.TransFecha">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.TransConcepto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.IdUsuario">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.ComercioCodigo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.TransTotal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.ComercioCodigoNavigation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.IdUsuarioNavigation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.TransEstadoNavigation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zona.API.Models.Transaccion.TransMedioPagoNavigation">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

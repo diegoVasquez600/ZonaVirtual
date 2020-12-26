@@ -60,19 +60,19 @@ namespace ZonaClient.ViewModels
             {
                 PruebaCollection.Add(new Prueba 
                 { 
-                    ComercioCodigo = data.ComercioCodigo,
-                    ComercioNombre = data.ComercioNombre,
-                    ComercioNit = data.ComercioNit,
-                    ComercioDireccion = data.ComercioDireccion,
-                    TransCodigo = data.TransCodigo,
-                    TransMedioPago = data.TransMedioPago,
-                    TransEstado = data.TransEstado,
-                    TransTotal = data.TransTotal,
-                    TransFecha = data.TransFecha,
-                    TransConcepto = data.TransConcepto,
-                    UsuarioIdentificacion = data.UsuarioIdentificacion,
-                    UsuarioNombre = data.UsuarioNombre,
-                    UsuarioEmail = data.UsuarioEmail
+                    Comercio_codigo = data.Comercio_codigo,
+                    Comercio_nombre = data.Comercio_nombre,
+                    Comercio_nit = data.Comercio_nit,
+                    Comercio_direccion = data.Comercio_direccion,
+                    Trans_codigo = data.Trans_codigo,
+                    Trans_medio_pago = data.Trans_medio_pago,
+                    Trans_estado = data.Trans_estado,
+                    Trans_total = data.Trans_total,
+                    Trans_fecha = data.Trans_fecha,
+                    Trans_concepto = data.Trans_concepto,
+                    Usuario_identificacion = data.Usuario_identificacion,
+                    Usuario_nombre = data.Usuario_nombre,
+                    Usuario_email = data.Usuario_email
                 });
             }
             return PruebaCollection;
