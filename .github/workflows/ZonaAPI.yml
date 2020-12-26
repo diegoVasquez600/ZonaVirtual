@@ -9,7 +9,7 @@ env:
   AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.ZONAAPI_PUBLISH_PROFILE }}
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 5.0.x
-  PROJECT_PATH: Zona.API
+  PROJECT_PATH: /Zona.API
 jobs:
   build:
     runs-on: ubuntu-latest
