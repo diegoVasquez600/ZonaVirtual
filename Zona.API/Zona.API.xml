@@ -4,16 +4,84 @@
         <name>Zona.API</name>
     </assembly>
     <members>
-        <member name="M:Zona.API.Controllers.ComercioController.InsertComercio(Zona.API.Models.Comercio)">
+        <member name="T:Zona.API.Controllers.ComercioController">
             <summary>
             
             </summary>
+        </member>
+        <member name="M:Zona.API.Controllers.ComercioController.GetComercios">
+            <summary>
+            Gets all the Comercio list
+            </summary>
+            <returns>
+            if the execution is correct returns the IEnumerable of Comercio
+            </returns>
+        </member>
+        <member name="M:Zona.API.Controllers.ComercioController.GetComercio(Zona.API.Models.Comercio)">
+            <summary>
+            Get the specific Comercio
+            </summary>
             <param name="value">
-            
+            Recieve comercio model
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Zona.API.Controllers.ComercioController.InsertComercio(Zona.API.Models.Comercio)">
+            <summary>
+            Insert a new Comercio to database
+            </summary>
+            <param name="value">
+            Recieve comercio model
             </param>
             <remarks>
              Using POST api/Comercio/InsertComercio
             </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.ComercioController.UpdateComercio(Zona.API.Models.Comercio)">
+            <summary>
+            Update a Comercio registry on Comercio
+            </summary>
+            <param name="value">
+            Recieve comercio model
+            </param>
+            <returns>
+            if the execution is correct and the Comercio Exits return a message if the update was correct or not else return an exception
+            </returns>
+            <remarks>
+            Using PUT api/Comercio/UpdateComercio
+            </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.ComercioController.DeleteComercio(Zona.API.Models.Comercio)">
+            <summary>
+            Delete the specific Comercio
+            </summary>
+            <param name="value">
+            Recieve comercio model
+            </param>
+            <remarks>
+            Using DELETE api/Comercio/DeleteComercio
+            </remarks>
+        </member>
+        <member name="T:Zona.API.Controllers.TransaccionController">
+            <summary>
+             Controller Transaccion
+            </summary>
+        </member>
+        <member name="M:Zona.API.Controllers.TransaccionController.InsertTransaccion(Zona.API.Models.Transaccion)">
+            <summary>
+            Method Insert a new Transaction
+            </summary>
+            <param name="value">
+            Recieve Transaccion Model
+            </param>
+            <returns>
+            if the execution is correct returns a message with the confirmation else returns an exception
+            </returns>
+        </member>
+        <member name="T:Zona.API.Controllers.UsuarioController">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:Zona.API.Models.Comercio">
             <summary>

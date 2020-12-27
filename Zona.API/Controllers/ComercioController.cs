@@ -9,29 +9,50 @@ using Zona.API.Models;
 
 namespace Zona.API.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ComercioController : ControllerBase
     {
-        ZonaDBContext dBContext = new ZonaDBContext();
+        ZonaDBContext dbContext = new ZonaDBContext();
+        IEnumerable<Comercio> comercios;
+        /// <summary>
+        /// Gets all the Comercio list
+        /// </summary>
+        /// <returns>
+        /// if the execution is correct returns the IEnumerable of Comercio
+        /// </returns>
         // GET: api/<ComercioController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        [Route("GetComercios")]
+        public IEnumerable<Comercio> GetComercios()
         {
-            return new string[] { "value1", "value2" };
+            comercios = new List<Comercio>();
+            comercios = dbContext.Comercios.ToList();
+            return comercios;
         }
 
+        /// <summary>
+        /// Get the specific Comercio
+        /// </summary>
+        /// <param name="value">
+        /// Recieve comercio model
+        /// </param>
+        /// <returns></returns>
         // GET api/<ComercioController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("GetComercio")]
+        public string GetComercio(Comercio value)
         {
             return "value";
         }
         /// <summary>
-        /// 
+        /// Insert a new Comercio to database
         /// </summary>
         /// <param name="value">
-        /// 
+        /// Recieve comercio model
         /// </param>
         /// <remarks>
         ///  Using POST api/Comercio/InsertComercio
@@ -42,10 +63,10 @@ namespace Zona.API.Controllers
         {
             try
             {
-                if (!dBContext.Comercios.Any(cm => cm.ComercioCodigo.Equals(value.ComercioCodigo)))
+                if (!dbContext.Comercios.Any(cm => cm.ComercioCodigo.Equals(value.ComercioCodigo)))
                 {
-                    dBContext.Comercios.Add(value);
-                    dBContext.SaveChanges();
+                    dbContext.Comercios.Add(value);
+                    dbContext.SaveChanges();
                     return $"Comercio {value.ComericoNombre} insertado correctamente";
                 }
                 else
@@ -58,19 +79,56 @@ namespace Zona.API.Controllers
                 return ex.Message;
             }
         }
-
-        // PUT api/<ComercioController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        /// <summary>
+        /// Update a Comercio registry on Comercio
+        /// </summary>
+        /// <param name="value">
+        /// Recieve comercio model
+        /// </param>
+        /// <returns>
+        /// if the execution is correct and the Comercio Exits return a message if the update was correct or not else return an exception
+        /// </returns>
+        /// <remarks>
+        /// Using PUT api/Comercio/UpdateComercio
+        /// </remarks>
+        [HttpPut]
+        [Route("UpdateComercio")]
+        public string UpdateComercio([FromBody] Comercio value)
         {
-
+            try
+            {
+                if (dbContext.Comercios.Any(cm => cm.ComercioCodigo.Equals(value.ComercioCodigo)))
+                {
+                    dbContext.Comercios.Update(value);
+                    dbContext.SaveChanges();
+                    return $"El Comercio {value.ComericoNombre} actualizado correctamente";
+                }
+                else
+                {
+                    return $"El Comercio {value.ComericoNombre} no se encuentra registrado";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
-        // DELETE api/<ComercioController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        /// <summary>
+        /// Delete the specific Comercio
+        /// </summary>
+        /// <param name="value">
+        /// Recieve comercio model
+        /// </param>
+        /// <remarks>
+        /// Using DELETE api/Comercio/DeleteComercio
+        /// </remarks>
+        [HttpDelete]
+        [Route("DeleteComercio")]
+        public void DeleteComercio(Comercio value)
         {
-
+            dbContext.Comercios.Remove(value);
+            dbContext.SaveChanges();
         }
     }
 }

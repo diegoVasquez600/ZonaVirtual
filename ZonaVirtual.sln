@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zona.API", "Zona.API\Zona.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZonaWebClient", "ZonaWebClient\ZonaWebClient.csproj", "{D3714E3F-8AF9-40E8-9839-6C3F206C903A}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5EE143E5-5DAD-4D13-801C-8DEF885742C8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,10 +43,6 @@ Global
 		{D3714E3F-8AF9-40E8-9839-6C3F206C903A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3714E3F-8AF9-40E8-9839-6C3F206C903A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3714E3F-8AF9-40E8-9839-6C3F206C903A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EE143E5-5DAD-4D13-801C-8DEF885742C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EE143E5-5DAD-4D13-801C-8DEF885742C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EE143E5-5DAD-4D13-801C-8DEF885742C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EE143E5-5DAD-4D13-801C-8DEF885742C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

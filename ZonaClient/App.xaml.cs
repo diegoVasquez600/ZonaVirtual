@@ -17,7 +17,8 @@ namespace ZonaClient
         /// ZonaBackendUrl 
         /// </summary>
         public static string ZonaPruebaUrl = "http://pbiz.zonavirtual.com/api/";
-        //public static string AzureBackendUrl = ;
+        public static string AzureBackendUrl = "https://zonaapi.azurewebsites.net/api/";
+        public static string LocalBackendUrl = "https://localhost:44367/api/";
 
     }
 }

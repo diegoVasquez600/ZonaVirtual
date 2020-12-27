@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace ZonaClient.ViewModels
     {
         #region Fields
         DataStorePrueba dataStorePrueba = new DataStorePrueba();
+        DataStoreComercio dataStoreComercio = new DataStoreComercio();
+        DataStoreUsuario dataStoreUsuario = new DataStoreUsuario();
         #endregion
 
         #region Properties
@@ -74,9 +77,44 @@ namespace ZonaClient.ViewModels
                     Usuario_nombre = data.Usuario_nombre,
                     Usuario_email = data.Usuario_email
                 });
+                await SaveDataAsync(response);
             }
             return PruebaCollection;
-        } 
+        }
+
+        private async Task SaveDataAsync(IEnumerable<Prueba> response)
+        {
+            try
+            {
+                Comercio comercio;
+                Usuario usuario;
+                foreach (var dt in response)
+                {
+                    comercio = new Comercio()
+                    {
+                        ComercioCodigo = dt.Comercio_codigo,
+                        ComericoNombre = dt.Comercio_nombre,
+                        ComercioNit = dt.Comercio_nit,
+                        ComercioDireccion = dt.Comercio_direccion,
+                    };
+                    usuario = new Usuario()
+                    {
+                        UsuarioNombre = dt.Usuario_nombre,
+                        UsuarioIdentificacion = dt.Usuario_identificacion,
+                        UsuarioEmail = dt.Usuario_email,
+                    };
+
+                    var messageCm = await dataStoreComercio.AddComercioAsync(comercio);
+                    var messageUsr = await dataStoreUsuario.AddUsuarioAsync(usuario);
+                    Debug.WriteLine($"{messageCm}\n" +
+                        $"{messageUsr}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
         #endregion
     }
 }

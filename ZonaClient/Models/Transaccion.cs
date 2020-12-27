@@ -10,11 +10,11 @@ namespace ZonaClient.Models
         public int TransCodigo { get; set; }
         public int TransMedioPago { get; set; }
         public int TransEstado { get; set; }
-        public DateTime? TransFecha { get; set; }
+        public DateTime TransFecha { get; set; }
         public string TransConcepto { get; set; }
-        public int? IdUsuario { get; set; }
-        public int? ComercioCodigo { get; set; }
-        public double? TransTotal { get; set; }
+        public int IdUsuario { get; set; }
+        public int ComercioCodigo { get; set; }
+        public double TransTotal { get; set; }
 
         public virtual Comercio ComercioCodigoNavigation { get; set; }
         public virtual Usuario IdUsuarioNavigation { get; set; }
