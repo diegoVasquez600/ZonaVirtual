@@ -44,7 +44,7 @@ namespace Zona.API.Models
             modelBuilder.Entity<Comercio>(entity =>
             {
                 entity.HasKey(e => e.ComercioCodigo)
-                    .HasName("PK__COMERCIO__8A219B90DA7F0B75");
+                    .HasName("PK__COMERCIO__8A219B90F0F79AE4");
 
                 entity.ToTable("COMERCIO");
 
@@ -82,7 +82,7 @@ namespace Zona.API.Models
             modelBuilder.Entity<TransEstado>(entity =>
             {
                 entity.HasKey(e => e.EstadoCodigo)
-                    .HasName("PK__TRANS_ES__3324761CEBC9B6B2");
+                    .HasName("PK__TRANS_ES__3324761C14DF7FD2");
 
                 entity.ToTable("TRANS_ESTADO");
 
@@ -99,7 +99,7 @@ namespace Zona.API.Models
             modelBuilder.Entity<TransMedioPago>(entity =>
             {
                 entity.HasKey(e => e.MedioPagoCodigo)
-                    .HasName("PK__TRANS_ME__D9538C4BFAC443AE");
+                    .HasName("PK__TRANS_ME__D9538C4B4520CADC");
 
                 entity.ToTable("TRANS_MEDIO_PAGO");
 
@@ -116,7 +116,7 @@ namespace Zona.API.Models
             modelBuilder.Entity<Transaccion>(entity =>
             {
                 entity.HasKey(e => e.TransId)
-                    .HasName("PK__TRANSACC__9E5DDB3C769DEE61");
+                    .HasName("PK__TRANSACC__9E5DDB3C6C9D9C03");
 
                 entity.ToTable("TRANSACCION");
 
@@ -142,7 +142,10 @@ namespace Zona.API.Models
 
                 entity.Property(e => e.TransTotal).HasColumnName("Trans_total");
 
-                entity.Property(e => e.UsuarioIdentificacion).HasColumnName("usuario_identificacion");
+                entity.Property(e => e.UsuarioIdentificacion)
+                    .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .HasColumnName("usuario_identificacion");
 
                 entity.HasOne(d => d.ComercioCodigoNavigation)
                     .WithMany(p => p.Transaccions)
@@ -165,11 +168,11 @@ namespace Zona.API.Models
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__USUARIO__645723A6B74BA02A");
+                    .HasName("PK__USUARIO__645723A659E08DD5");
 
                 entity.ToTable("USUARIO");
 
-                entity.HasIndex(e => e.UsuarioIdentificacion, "UQ__USUARIO__D95D4B94BCCA31A1")
+                entity.HasIndex(e => e.UsuarioIdentificacion, "UQ__USUARIO__D95D4B94C0C88302")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");

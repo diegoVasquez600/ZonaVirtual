@@ -18,7 +18,7 @@ namespace Zona.API.Controllers
     public class TransaccionController : ControllerBase
     {
         ZonaDBContext dbContext = new ZonaDBContext();
-        IEnumerable<Transaccion> transacciones;
+        IEnumerable<Transaccion> transacciones = new List<Transaccion>();
         /// <summary>
         /// Method GetTransacciones
         /// </summary>
@@ -32,7 +32,6 @@ namespace Zona.API.Controllers
         [Route("GetTransacciones")]
         public IEnumerable<Transaccion> GetTransacciones()
         {
-            transacciones = new List<Transaccion>();
             transacciones = dbContext.Transaccions.ToList();
             return transacciones;
         }
@@ -56,7 +55,7 @@ namespace Zona.API.Controllers
             {
                 if (dbContext.Transaccions.Any(tsn => tsn.TransId.Equals(value.TransId)))
                 {
-                    var transaccion = dbContext.Comercios.Find(value.TransId);
+                    var transaccion = dbContext.Transaccions.Find(value.TransId);
                     return JsonConvert.SerializeObject(transaccion);
                 }
                 else

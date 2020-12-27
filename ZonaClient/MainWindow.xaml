@@ -7,8 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            <Button Content="Transaction" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" Click="Button_Click"/>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Content="Obteniendo Datos del servidor de Pruebas de Zona Virtual" Margin="5"/>
+            <ProgressBar Height="20" IsIndeterminate="True" Margin="5,0,0,0"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="290" Height="auto">
+                <Label Content="Para empezar selecciona tu Tipo de Usuario"/>
+                <ComboBox Width="auto" Name="cmbTipo" SelectionChanged="cmbTipo_SelectionChanged" >
+                    <ComboBoxItem Tag="1" Content="Usuario" x:Name="itemUsr"/>
+                    <ComboBoxItem Tag="2" Content="Comercio" x:Name="itemCom"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel x:Name="panelDocumento" Visibility="Collapsed">
+                <Label x:Name="lblDocumento" d:Content="Ingrese su Identificacion"/>
+                <TextBox x:Name="txtDocumento" PreviewTextInput="NumberValidationTextBox"/>
+                <Button Content="Validar" x:Name="btnVld" Click="btnVld_Click"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

@@ -25,6 +25,9 @@
             Recieve comercio model
             </param>
             <returns></returns>
+            <remarks>
+            Usage GET api/Comercio/GetComercio
+            </remarks>
         </member>
         <member name="M:Zona.API.Controllers.ComercioController.InsertComercio(Zona.API.Models.Comercio)">
             <summary>
@@ -60,6 +63,34 @@
             </param>
             <remarks>
             Using DELETE api/Comercio/DeleteComercio
+            </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.MedioPagoController.InsertMedioPago(Zona.API.Models.TransMedioPago)">
+             <summary>
+             
+             </summary>
+             <param name="value"></param>
+             <remarks>
+             Usage POST api/MedioPago/InsertMedioPago
+            </remarks>
+        </member>
+        <member name="T:Zona.API.Controllers.RegistroUsuarioController">
+            <summary>
+            Controller RegistroUsuario
+            </summary>
+        </member>
+        <member name="M:Zona.API.Controllers.RegistroUsuarioController.Verificacion(Zona.API.Models.Usuario)">
+            <summary>
+            Usage  POST api/RegistroContoller/Verificacion
+            </summary>
+        </member>
+        <member name="M:Zona.API.Controllers.RegistroUsuarioController.Registro(Zona.API.Models.Usuario)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <remarks>
+            Usage PUT api/RegistroUsuario/Registro
             </remarks>
         </member>
         <member name="T:Zona.API.Controllers.TransaccionController">
@@ -187,6 +218,23 @@
             <remarks>
             Usage DELETE api/Usuario/DeleteUsuario
             </remarks>
+        </member>
+        <member name="T:Zona.API.Utils.Common">
+            <summary>
+            Class Common
+            </summary>
+        </member>
+        <member name="M:Zona.API.Utils.Common.GetRandomSalt(System.Int32)">
+            <summary>
+            Creating Random Salt String
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Zona.API.Utils.Common.SaltHashPassword(System.Byte[],System.Byte[])">
+            <summary>
+            Creating Password with Salt
+            </summary>
         </member>
     </members>
 </doc>

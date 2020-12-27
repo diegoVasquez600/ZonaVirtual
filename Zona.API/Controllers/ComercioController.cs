@@ -42,7 +42,9 @@ namespace Zona.API.Controllers
         /// Recieve comercio model
         /// </param>
         /// <returns></returns>
-        // GET api/<ComercioController>/5
+        /// <remarks>
+        /// Usage GET api/Comercio/GetComercio
+        /// </remarks>
         [HttpGet]
         [Route("GetComercio")]
         public string GetComercio([FromBody] Comercio value)
