@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using ZonaClient.Models;
 using ZonaClient.Services;
@@ -16,7 +14,7 @@ namespace ZonaClient.ViewModels
     /// <remarks>
     /// Is the ViewModel for Transaction.xaml
     /// </remarks>
-    public class MainViewModel:BaseViewModel
+    public class MainViewModel : BaseViewModel
     {
         #region Fields
         DataStorePrueba dataStorePrueba = new DataStorePrueba();

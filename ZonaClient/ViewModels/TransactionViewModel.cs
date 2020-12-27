@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using ZonaClient.Models;
 using ZonaClient.Services;
@@ -56,7 +54,7 @@ namespace ZonaClient.ViewModels
         /// </returns>
         private async Task<ObservableCollection<Prueba>> CargarDataAsync()
         {
-            var response = await dataStorePrueba.GetDataAsync();   
+            var response = await dataStorePrueba.GetDataAsync();
             await SaveDataAsync(response);
             return PruebaCollection;
         }
@@ -100,7 +98,7 @@ namespace ZonaClient.ViewModels
                     var messageCm = await dataStoreComercio.AddComercioAsync(comercio);
                     var messageUsr = await dataStoreUsuario.AddUsuarioAsync(usuario);
                     var messageTsn = await dataStoreTransaccion.AddTransaccionAsync(transaccion);
-                    Debug.WriteLine($"Insertar Dato en ZonaDB via Zona.API\n"+
+                    Debug.WriteLine($"Insertar Dato en ZonaDB via Zona.API\n" +
                         $"{messageCm}\n" +
                         $"{messageUsr}\n" +
                         $"{messageTsn}\n");
@@ -109,7 +107,7 @@ namespace ZonaClient.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-            }         
+            }
         }
         #endregion
     }

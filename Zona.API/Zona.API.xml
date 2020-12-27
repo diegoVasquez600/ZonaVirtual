@@ -65,6 +65,20 @@
             Using DELETE api/Comercio/DeleteComercio
             </remarks>
         </member>
+        <member name="T:Zona.API.Controllers.LoginUsuarioController">
+            <summary>
+            Controller LoginUsuario
+            </summary>
+        </member>
+        <member name="M:Zona.API.Controllers.LoginUsuarioController.LoginUsuario(Zona.API.Models.Usuario)">
+            <summary>
+            Method LoginUsuario
+            </summary>
+            <param name="value"></param>
+            <remarks> 
+            Usage POST api/LoginUsuario
+            </remarks> 
+        </member>
         <member name="M:Zona.API.Controllers.MedioPagoController.InsertMedioPago(Zona.API.Models.TransMedioPago)">
              <summary>
              

@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Zona.API.Models;
 using Zona.API.Utils;
 
@@ -27,7 +24,7 @@ namespace Zona.API.Controllers
         [Route("Verificacion")]
         public int Verificacion([FromBody] Usuario value)
         {
-            if(dBContext.Usuarios.Any(usr=> usr.UsuarioIdentificacion.Equals(value.UsuarioIdentificacion)))
+            if (dBContext.Usuarios.Any(usr => usr.UsuarioIdentificacion.Equals(value.UsuarioIdentificacion)))
             {
                 var usuario = dBContext.Usuarios.Where(usr => usr.UsuarioIdentificacion == value.UsuarioIdentificacion).FirstOrDefault();
                 if (usuario.UsuarioPassword != null)
@@ -73,7 +70,7 @@ namespace Zona.API.Controllers
                     dBContext.SaveChanges();
                     return 1;
                 }
-                    
+
             }
             else
             {

@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +24,7 @@ namespace ZonaClient.Services
                 BaseAddress = new Uri($"{App.AzureBackendUrl}Usuario/")
             };
             usuarios = new List<Usuario>();
-        } 
+        }
         #endregion
 
         #region Methods
@@ -54,7 +53,7 @@ namespace ZonaClient.Services
         public Task<string> UpdateUsuarioAsync(Usuario usuario)
         {
             throw new NotImplementedException();
-        } 
+        }
         #endregion
     }
 }

@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Zona.API.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -119,7 +118,7 @@ namespace Zona.API.Controllers
         {
             try
             {
-                if (dBContext.Usuarios.Any(usr=> usr.IdUsuario.Equals(value.IdUsuario)))
+                if (dBContext.Usuarios.Any(usr => usr.IdUsuario.Equals(value.IdUsuario)))
                 {
                     dBContext.Usuarios.Update(value);
                     dBContext.SaveChanges();

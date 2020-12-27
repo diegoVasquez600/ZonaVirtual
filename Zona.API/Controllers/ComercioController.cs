@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Zona.API.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -51,7 +50,7 @@ namespace Zona.API.Controllers
         {
             try
             {
-                if (dbContext.Comercios.Any(cm=> cm.ComercioCodigo.Equals(value.ComercioCodigo)))
+                if (dbContext.Comercios.Any(cm => cm.ComercioCodigo.Equals(value.ComercioCodigo)))
                 {
                     var comercio = dbContext.Comercios.Find(value.ComercioCodigo);
                     return JsonConvert.SerializeObject(comercio);
