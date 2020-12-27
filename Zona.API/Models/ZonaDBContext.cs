@@ -44,7 +44,7 @@ namespace Zona.API.Models
             modelBuilder.Entity<Comercio>(entity =>
             {
                 entity.HasKey(e => e.ComercioCodigo)
-                    .HasName("PK__COMERCIO__8A219B901354022B");
+                    .HasName("PK__COMERCIO__8A219B90DA7F0B75");
 
                 entity.ToTable("COMERCIO");
 
@@ -82,7 +82,7 @@ namespace Zona.API.Models
             modelBuilder.Entity<TransEstado>(entity =>
             {
                 entity.HasKey(e => e.EstadoCodigo)
-                    .HasName("PK__TRANS_ES__3324761C9E96F168");
+                    .HasName("PK__TRANS_ES__3324761CEBC9B6B2");
 
                 entity.ToTable("TRANS_ESTADO");
 
@@ -99,7 +99,7 @@ namespace Zona.API.Models
             modelBuilder.Entity<TransMedioPago>(entity =>
             {
                 entity.HasKey(e => e.MedioPagoCodigo)
-                    .HasName("PK__TRANS_ME__D9538C4B89A0C5D5");
+                    .HasName("PK__TRANS_ME__D9538C4BFAC443AE");
 
                 entity.ToTable("TRANS_MEDIO_PAGO");
 
@@ -115,18 +115,17 @@ namespace Zona.API.Models
 
             modelBuilder.Entity<Transaccion>(entity =>
             {
-                entity.HasKey(e => e.TransCodigo)
-                    .HasName("PK__TRANSACC__C36C7E33B9370DAD");
+                entity.HasKey(e => e.TransId)
+                    .HasName("PK__TRANSACC__9E5DDB3C769DEE61");
 
                 entity.ToTable("TRANSACCION");
 
-                entity.Property(e => e.TransCodigo)
-                    .ValueGeneratedNever()
-                    .HasColumnName("Trans_codigo");
-
                 entity.Property(e => e.ComercioCodigo).HasColumnName("comercio_codigo");
 
-                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
+                entity.Property(e => e.TransCodigo)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("Trans_codigo");
 
                 entity.Property(e => e.TransConcepto)
                     .HasColumnType("text")
@@ -135,22 +134,20 @@ namespace Zona.API.Models
                 entity.Property(e => e.TransEstado).HasColumnName("Trans_estado");
 
                 entity.Property(e => e.TransFecha)
-                    .HasColumnType("date")
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
                     .HasColumnName("Trans_fecha");
 
                 entity.Property(e => e.TransMedioPago).HasColumnName("Trans_medio_pago");
 
                 entity.Property(e => e.TransTotal).HasColumnName("Trans_total");
 
+                entity.Property(e => e.UsuarioIdentificacion).HasColumnName("usuario_identificacion");
+
                 entity.HasOne(d => d.ComercioCodigoNavigation)
                     .WithMany(p => p.Transaccions)
                     .HasForeignKey(d => d.ComercioCodigo)
-                    .HasConstraintName("FK__TRANSACCI__comer__68487DD7");
-
-                entity.HasOne(d => d.IdUsuarioNavigation)
-                    .WithMany(p => p.Transaccions)
-                    .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__TRANSACCI__idUsu__6754599E");
+                    .HasConstraintName("FK__TRANSACCI__comer__6754599E");
 
                 entity.HasOne(d => d.TransEstadoNavigation)
                     .WithMany(p => p.Transaccions)
@@ -168,11 +165,11 @@ namespace Zona.API.Models
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__USUARIO__645723A60160D629");
+                    .HasName("PK__USUARIO__645723A6B74BA02A");
 
                 entity.ToTable("USUARIO");
 
-                entity.HasIndex(e => e.UsuarioIdentificacion, "UQ__USUARIO__D95D4B9403FE70B5")
+                entity.HasIndex(e => e.UsuarioIdentificacion, "UQ__USUARIO__D95D4B94BCCA31A1")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");

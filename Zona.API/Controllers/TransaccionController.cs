@@ -55,7 +55,7 @@ namespace Zona.API.Controllers
                 }
                 else
                 {
-                    return $"La transaccion número {value.TransCodigo} ha sido insertada anteriormente";
+                    return $"La transaccion número {value.TransCodigo} ya ha sido insertada anteriormente";
                 }
             }
             catch (Exception ex)

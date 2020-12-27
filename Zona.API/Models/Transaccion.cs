@@ -5,58 +5,20 @@ using System.Collections.Generic;
 
 namespace Zona.API.Models
 {
-     /// <summary>
-     /// 
-     /// </summary>
     public partial class Transaccion
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public int TransCodigo { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        public int TransId { get; set; }
+        public string TransCodigo { get; set; }
         public int TransMedioPago { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
         public int TransEstado { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime TransFecha { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        public string TransFecha { get; set; }
         public string TransConcepto { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int? IdUsuario { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int? ComercioCodigo { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public double? TransTotal { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        public string UsuarioIdentificacion { get; set; }
+        public int ComercioCodigo { get; set; }
+        public double TransTotal { get; set; }
+
         public virtual Comercio ComercioCodigoNavigation { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public virtual Usuario IdUsuarioNavigation { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
         public virtual TransEstado TransEstadoNavigation { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
         public virtual TransMedioPago TransMedioPagoNavigation { get; set; }
     }
 }

@@ -7,14 +7,6 @@
         mc:Ignorable="d"
         Title="Transaction" Height="450" Width="800">
     <Grid>
-        <ListView ItemsSource="{Binding Path=PruebaCollection}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Label Content="{Binding Comercio_codigo}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        
     </Grid>
 </Window>

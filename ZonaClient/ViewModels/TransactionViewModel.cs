@@ -23,6 +23,7 @@ namespace ZonaClient.ViewModels
         DataStorePrueba dataStorePrueba = new DataStorePrueba();
         DataStoreComercio dataStoreComercio = new DataStoreComercio();
         DataStoreUsuario dataStoreUsuario = new DataStoreUsuario();
+        DataStoreTransaccion dataStoreTransaccion = new DataStoreTransaccion();
         #endregion
 
         #region Properties
@@ -41,7 +42,6 @@ namespace ZonaClient.ViewModels
         /// </remarks>
         public TransactionViewModel()
         {
-            
             _ = CargarDataAsync();
         }
 
@@ -56,29 +56,8 @@ namespace ZonaClient.ViewModels
         /// </returns>
         private async Task<ObservableCollection<Prueba>> CargarDataAsync()
         {
-            PruebaCollection = new ObservableCollection<Prueba>();
-            var response = await dataStorePrueba.GetDataAsync();
-            
-            foreach(var data in response)
-            {
-                PruebaCollection.Add(new Prueba 
-                { 
-                    Comercio_codigo = data.Comercio_codigo,
-                    Comercio_nombre = data.Comercio_nombre,
-                    Comercio_nit = data.Comercio_nit,
-                    Comercio_direccion = data.Comercio_direccion,
-                    Trans_codigo = data.Trans_codigo,
-                    Trans_medio_pago = data.Trans_medio_pago,
-                    Trans_estado = data.Trans_estado,
-                    Trans_total = data.Trans_total,
-                    Trans_fecha = data.Trans_fecha,
-                    Trans_concepto = data.Trans_concepto,
-                    Usuario_identificacion = data.Usuario_identificacion,
-                    Usuario_nombre = data.Usuario_nombre,
-                    Usuario_email = data.Usuario_email
-                });
-                await SaveDataAsync(response);
-            }
+            var response = await dataStorePrueba.GetDataAsync();   
+            await SaveDataAsync(response);
             return PruebaCollection;
         }
 
@@ -88,6 +67,7 @@ namespace ZonaClient.ViewModels
             {
                 Comercio comercio;
                 Usuario usuario;
+                Transaccion transaccion;
                 foreach (var dt in response)
                 {
                     comercio = new Comercio()
@@ -97,6 +77,7 @@ namespace ZonaClient.ViewModels
                         ComercioNit = dt.Comercio_nit,
                         ComercioDireccion = dt.Comercio_direccion,
                     };
+
                     usuario = new Usuario()
                     {
                         UsuarioNombre = dt.Usuario_nombre,
@@ -104,16 +85,31 @@ namespace ZonaClient.ViewModels
                         UsuarioEmail = dt.Usuario_email,
                     };
 
+                    transaccion = new Transaccion()
+                    {
+                        TransCodigo = dt.Trans_codigo,
+                        TransEstado = dt.Trans_estado,
+                        ComercioCodigo = dt.Comercio_codigo,
+                        UsuarioIdentificacion = dt.Usuario_identificacion,
+                        TransConcepto = dt.Trans_concepto,
+                        TransFecha = dt.Trans_fecha,
+                        TransMedioPago = dt.Trans_medio_pago,
+                        TransTotal = dt.Trans_total
+                    };
+
                     var messageCm = await dataStoreComercio.AddComercioAsync(comercio);
                     var messageUsr = await dataStoreUsuario.AddUsuarioAsync(usuario);
-                    Debug.WriteLine($"{messageCm}\n" +
-                        $"{messageUsr}");
+                    var messageTsn = await dataStoreTransaccion.AddTransaccionAsync(transaccion);
+                    Debug.WriteLine($"Insertar Dato en ZonaDB via Zona.API\n"+
+                        $"{messageCm}\n" +
+                        $"{messageUsr}\n" +
+                        $"{messageTsn}\n");
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-            }
+            }         
         }
         #endregion
     }
