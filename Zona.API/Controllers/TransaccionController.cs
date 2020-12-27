@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,18 +18,56 @@ namespace Zona.API.Controllers
     public class TransaccionController : ControllerBase
     {
         ZonaDBContext dbContext = new ZonaDBContext();
-        // GET: api/<TransaccionController>
+        IEnumerable<Transaccion> transacciones;
+        /// <summary>
+        /// Method GetTransacciones
+        /// </summary>
+        /// <returns>
+        /// If the execution is correct returns all the list of transactions
+        /// </returns>
+        /// <remarks>
+        /// Usage GET: api/Transaccion/GetTransacciones
+        /// </remarks>
         [HttpGet]
-        public IEnumerable<string> Get()
+        [Route("GetTransacciones")]
+        public IEnumerable<Transaccion> GetTransacciones()
         {
-            return new string[] { "value1", "value2" };
+            transacciones = new List<Transaccion>();
+            transacciones = dbContext.Transaccions.ToList();
+            return transacciones;
         }
-
-        // GET api/<TransaccionController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        /// <summary>
+        /// Method GetTransaccion
+        /// </summary>
+        /// <param name="value">
+        /// Recieve the Transaccion Model
+        /// </param>
+        /// <returns>
+        /// the specific Transaccion
+        /// </returns>
+        /// <remarks>
+        /// Usage GET api/Transaccion/GetTransaccion
+        /// </remarks>
+        [HttpGet]
+        [Route("GetTransaccion")]
+        public string GetTransaccion([FromBody] Transaccion value)
         {
-            return "value";
+            try
+            {
+                if (dbContext.Transaccions.Any(tsn => tsn.TransId.Equals(value.TransId)))
+                {
+                    var transaccion = dbContext.Comercios.Find(value.TransId);
+                    return JsonConvert.SerializeObject(transaccion);
+                }
+                else
+                {
+                    return $"El comercio con codigo {value.ComercioCodigo} no se encuentra";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         /// <summary>
@@ -64,16 +103,55 @@ namespace Zona.API.Controllers
             }
         }
 
-        // PUT api/<TransaccionController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        /// <summary>
+        /// Method UpdateTransaccion
+        /// </summary>
+        /// <param name="value">Recieve the Transaccion Model</param>
+        /// <returns>if is correct returns a message else returns an exception</returns>
+        /// <remarks>
+        /// Usage PUT api/Transaccion/UpdateTransaccion
+        /// </remarks>
+        [HttpPut]
+        [Route("UpdateTransaccion")]
+        public string UpdateTransaccion([FromBody] Transaccion value)
         {
+            try
+            {
+                if (dbContext.Transaccions.Any(tsn => tsn.TransCodigo.Equals(value.TransCodigo)))
+                {
+                    dbContext.Transaccions.Update(value);
+                    dbContext.SaveChanges();
+                    return $"La transacción {value.TransCodigo} actualizada correctamente";
+                }
+                else
+                {
+                    return $"La transacción {value.TransCodigo} no se encuentra registrada";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
-        // DELETE api/<TransaccionController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // 
+        /// <summary>
+        /// Method DeleteTransaccion
+        /// </summary>
+        /// <param name="value">Recieve the Transacction Model</param>
+        /// <remarks>
+        /// Usage DELETE api/Transaccion/DeleteTransaccion
+        /// </remarks>
+        [HttpDelete]
+        [Route("DeleteTransaccion")]
+        public void DeleteTransaccion([FromBody] Transaccion value)
         {
+            if (dbContext.Transaccions.Any(tsn => tsn.TransCodigo.Equals(value.TransCodigo)))
+            {
+                var delete = dbContext.Transaccions.Find(value.TransId);
+                dbContext.Transaccions.Remove(delete);
+                dbContext.SaveChanges();
+            }
         }
     }
 }

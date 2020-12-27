@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,9 +45,24 @@ namespace Zona.API.Controllers
         // GET api/<ComercioController>/5
         [HttpGet]
         [Route("GetComercio")]
-        public string GetComercio(Comercio value)
+        public string GetComercio([FromBody] Comercio value)
         {
-            return "value";
+            try
+            {
+                if (dbContext.Comercios.Any(cm=> cm.ComercioCodigo.Equals(value.ComercioCodigo)))
+                {
+                    var comercio = dbContext.Comercios.Find(value.ComercioCodigo);
+                    return JsonConvert.SerializeObject(comercio);
+                }
+                else
+                {
+                    return $"El comercio con codigo {value.ComercioCodigo} no se encuentra";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
         /// <summary>
         /// Insert a new Comercio to database
@@ -125,10 +141,14 @@ namespace Zona.API.Controllers
         /// </remarks>
         [HttpDelete]
         [Route("DeleteComercio")]
-        public void DeleteComercio(Comercio value)
+        public void DeleteComercio([FromBody] Comercio value)
         {
-            dbContext.Comercios.Remove(value);
-            dbContext.SaveChanges();
+            if (dbContext.Comercios.Any(cm => cm.ComercioCodigo.Equals(value.ComercioCodigo)))
+            {
+                var deleteComercio = dbContext.Comercios.Find(value.ComercioCodigo);
+                dbContext.Comercios.Remove(deleteComercio);
+                dbContext.SaveChanges();
+            }
         }
     }
 }

@@ -67,6 +67,31 @@
              Controller Transaccion
             </summary>
         </member>
+        <member name="M:Zona.API.Controllers.TransaccionController.GetTransacciones">
+            <summary>
+            Method GetTransacciones
+            </summary>
+            <returns>
+            If the execution is correct returns all the list of transactions
+            </returns>
+            <remarks>
+            Usage GET: api/Transaccion/GetTransacciones
+            </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.TransaccionController.GetTransaccion(Zona.API.Models.Transaccion)">
+            <summary>
+            Method GetTransaccion
+            </summary>
+            <param name="value">
+            Recieve the Transaccion Model
+            </param>
+            <returns>
+            the specific Transaccion
+            </returns>
+            <remarks>
+            Usage GET api/Transaccion/GetTransaccion
+            </remarks>
+        </member>
         <member name="M:Zona.API.Controllers.TransaccionController.InsertTransaccion(Zona.API.Models.Transaccion)">
             <summary>
             Method Insert a new Transaction
@@ -78,10 +103,90 @@
             if the execution is correct returns a message with the confirmation else returns an exception
             </returns>
         </member>
+        <member name="M:Zona.API.Controllers.TransaccionController.UpdateTransaccion(Zona.API.Models.Transaccion)">
+            <summary>
+            Method UpdateTransaccion
+            </summary>
+            <param name="value">Recieve the Transaccion Model</param>
+            <returns>if is correct returns a message else returns an exception</returns>
+            <remarks>
+            Usage PUT api/Transaccion/UpdateTransaccion
+            </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.TransaccionController.DeleteTransaccion(Zona.API.Models.Transaccion)">
+            <summary>
+            Method DeleteTransaccion
+            </summary>
+            <param name="value">Recieve the Transacction Model</param>
+            <remarks>
+            Usage DELETE api/Transaccion/DeleteTransaccion
+            </remarks>
+        </member>
         <member name="T:Zona.API.Controllers.UsuarioController">
             <summary>
             
             </summary>
+        </member>
+        <member name="M:Zona.API.Controllers.UsuarioController.GetUsuario">
+            <summary>
+            Method GetUsuarios
+            </summary>
+            <returns>
+            if the execution is complete returns the list of Usuarios
+            </returns>
+            <remarks>
+            Usage GET: api/Usuario/GetUsuarios
+            </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.UsuarioController.GetUsuario(Zona.API.Models.Usuario)">
+            <summary>
+            Method GetUsuario
+            </summary>
+            <param name="value">
+            Recieve the usuario Model
+            </param>
+            <returns>
+            if the execution is successful returns the specific Usuario
+            </returns>
+            <remarks>
+            Usage GET api/Usuario/GetUsuario
+            </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.UsuarioController.InsertUsuario(Zona.API.Models.Usuario)">
+            <summary>
+            Method InsertUsuario
+            </summary>
+            <param name="value">
+            Recieve the Usuario Model
+            </param>
+            <returns>
+            If the execution is successful returns a Message else returns an exception
+            </returns>
+            <remarks>
+            Usage POST api/Usuario/InsertUsuario
+            </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.UsuarioController.UpdateUsuario(Zona.API.Models.Usuario)">
+            <summary>
+            Method UpdateUsuario
+            </summary>
+            <param name="value">
+            Recieve the Usuario Model
+            </param>
+            <remarks>
+            Usage PUT api/Usuario/UpdateUsuario
+            </remarks>
+        </member>
+        <member name="M:Zona.API.Controllers.UsuarioController.DeleteUsuario(Zona.API.Models.Usuario)">
+            <summary>
+            Method DeleteUsuario
+            </summary>
+            <param name="value">
+            Recieve the usuario Model
+            </param>
+            <remarks>
+            Usage DELETE api/Usuario/DeleteUsuario
+            </remarks>
         </member>
     </members>
 </doc>
