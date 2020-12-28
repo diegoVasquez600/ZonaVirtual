@@ -1,0 +1,25 @@
+﻿<Page x:Class="ZonaClient.IU.MisPagos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZonaClient.IU"
+      mc:Ignorable="d" 
+      d:Height="420" d:Width="600"
+      Height="420" Width="600"
+      Title="MisPagos" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Content="Nuevo Pago" Name="nuevoPagoButton" Click="nuevoPagoButton_Click" VerticalAlignment="Center" HorizontalAlignment="Left" Width="80" Margin="10,10,0,0"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1">
+            <DataGrid Name="PagosDgv" ItemsSource="{Binding PagosCollection}" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch">
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

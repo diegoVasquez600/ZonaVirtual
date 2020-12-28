@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZonaClient.Models;
 
 namespace ZonaClient.IU
 {
@@ -19,16 +21,22 @@ namespace ZonaClient.IU
     /// </summary>
     public partial class DashBoard : Window
     {
-        public DashBoard()
+        private readonly int _action;
+
+        public DashBoard(int action)
         {
             InitializeComponent();
             ValidateUser();
+            _action = action;
         }
 
         #region Methods
         private void ValidateUser()
         {
-            throw new NotImplementedException();
+            if (_action ==1)
+            {
+                PagosButton.Visibility = Visibility.Visible;
+            }
         }
 
         #endregion
@@ -37,10 +45,20 @@ namespace ZonaClient.IU
 
         private void PagosButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var usuarioIdentificacion = Application.Current.Properties["usuarioIdentificacion"].ToString();
+            frame.Content = new MisPagos(usuarioIdentificacion);
         }
 
         #endregion
 
+        private void MisGananciasButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MisTransaccionesButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

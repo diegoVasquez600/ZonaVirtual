@@ -53,8 +53,11 @@ namespace ZonaClient.IU
                 try
                 {
                     usuario = JsonConvert.DeserializeObject<Usuario>(response);
+                    App.Current.Properties.Clear();
+                    App.Current.Properties.Add("usuario", usuario);
+                    App.Current.Properties.Add("usuarioIdentificacion", usuario.UsuarioIdentificacion);
                     Application.Current.MainWindow.Close();
-                    Application.Current.MainWindow = new DashBoard();
+                    Application.Current.MainWindow = new DashBoard(1);
                     Application.Current.MainWindow.Show();
                     Close();
                 }

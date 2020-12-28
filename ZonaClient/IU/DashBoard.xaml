@@ -11,15 +11,15 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="420" Width="200">
-            <Button Content="Mis Pagos" Margin="5" Name="PagosButton" Height="auto" Click="PagosButton_Click" Visibility="Collapsed" d:Visibility="Visible"/>
-            <Button Content="Mis Ganancias" Margin="5" Name="MisGananciasButton" Height="auto" Click="PagosButton_Click" Visibility="Collapsed" d:Visibility="Visible"/>
-            
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="200">
+            <Button Content="Mis Pagos" Margin="5,50,5,5" Name="PagosButton" Height="auto" Click="PagosButton_Click" Visibility="Visible" d:Visibility="Visible"/>
+            <Button Content="Mis Ganancias" Margin="5" Name="MisGananciasButton" Height="auto" Click="MisGananciasButton_Click" Visibility="Collapsed" d:Visibility="Visible"/>
+            <Button Content="Mis Transacciones" Margin="5" Name="MisTransaccionesButton" Height="auto" Click="MisTransaccionesButton_Click" Visibility="Collapsed" d:Visibility="Visible"/>
+            <Border BorderThickness="1" BorderBrush="Black" Height="450"/>
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="420" Width="600">
-            <Frame Name="frame">
-                
-            </Frame>
+            <Frame Name="frame" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" NavigationUIVisibility="Hidden"/>
         </StackPanel>
+        <Border BorderThickness="1" BorderBrush="Black"/>
     </Grid>
 </Window>

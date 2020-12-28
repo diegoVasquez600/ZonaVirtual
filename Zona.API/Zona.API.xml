@@ -76,7 +76,7 @@
             </summary>
             <param name="value"></param>
             <remarks> 
-            Usage POST api/LoginUsuario
+            Usage POST api/LoginUsuario/Login
             </remarks> 
         </member>
         <member name="M:Zona.API.Controllers.MedioPagoController.InsertMedioPago(Zona.API.Models.TransMedioPago)">
@@ -87,6 +87,11 @@
              <remarks>
              Usage POST api/MedioPago/InsertMedioPago
             </remarks>
+        </member>
+        <member name="T:Zona.API.Controllers.PagosController">
+            <summary>
+            Controller Pagos
+            </summary>
         </member>
         <member name="T:Zona.API.Controllers.RegistroUsuarioController">
             <summary>
@@ -232,6 +237,11 @@
             <remarks>
             Usage DELETE api/Usuario/DeleteUsuario
             </remarks>
+        </member>
+        <member name="T:Zona.API.Models.Pagos">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:Zona.API.Utils.Common">
             <summary>

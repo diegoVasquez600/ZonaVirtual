@@ -1,0 +1,356 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/diego/source/repos/ZonaVirtual/Zona.API/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Controllers.ComercioController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Controllers.ComercioController.html",
+          "hash": "qjaWFP3zPZzOqgh6qPjP9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Controllers.LoginUsuarioController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Controllers.LoginUsuarioController.html",
+          "hash": "B/Ei3ZVKE13NYkB7O4g1xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Controllers.MedioPagoController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Controllers.MedioPagoController.html",
+          "hash": "404hSeffJSDEbj4KKL5kNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Controllers.RegistroUsuarioController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Controllers.RegistroUsuarioController.html",
+          "hash": "rGm3f53IMR55UgCJvi/W7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Controllers.TransaccionController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Controllers.TransaccionController.html",
+          "hash": "2GD5iqdd9O2cRcb0hpEzbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Controllers.UsuarioController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Controllers.UsuarioController.html",
+          "hash": "b+BzVa04gwfs8pQt4ssczQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Controllers.html",
+          "hash": "Dq9wQ7KWmFfYeFA4zY4kSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Models.Comercio.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Models.Comercio.html",
+          "hash": "d61shLja16pWnLhSkZRgtw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Models.TransEstado.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Models.TransEstado.html",
+          "hash": "Yggr6UcIVKgqizrnWr4NTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Models.TransMedioPago.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Models.TransMedioPago.html",
+          "hash": "rX4GB9zB3rKFUSVmMh3BGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Models.Transaccion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Models.Transaccion.html",
+          "hash": "mhLjHWe9pR8GDIbVaruloQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Models.Usuario.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Models.Usuario.html",
+          "hash": "ZjhPzX/1RvN6SJEgLwfT2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Models.ZonaDBContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Models.ZonaDBContext.html",
+          "hash": "gzIprl2S1G7q9YaZpx2UcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Models.html",
+          "hash": "zSZAkvMs75BvXvnEio2Ytw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Program.html",
+          "hash": "TxqWgNNiqw0VHq+OyBLbkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Startup.html",
+          "hash": "9elXKQcJ86dJhVQcB7hNyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Utils.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Utils.Common.html",
+          "hash": "9z9bWI/71u21GnDLmM7oKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.Utils.html",
+          "hash": "tJRVO1Det7v63yYfK2+qUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Zona.API.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zona.API.html",
+          "hash": "d9Op28GklKHNU8RZLYMqXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "Hcf850USBY2x7puV/64m7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "Z9USrbKDpLaiPuN1/kc68g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "QeuRZmsojsWjFrVsP1LpfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "39r01/Ud8sFGSw7+mDyy1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 19,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
