@@ -102,11 +102,11 @@ namespace ZonaClient
                         loginComercio.ShowDialog();
                     }
                     else if (response == "0")
-                        MessageBox.Show($"Al parecer el número de documento {txtDocumento.Text} no se encuentra en nuestra Base de datos", "Upps, No te encuentro", MessageBoxButton.OK);
+                        MessageBox.Show($"Al parecer el NIT {txtDocumento.Text} no se encuentra en nuestra Base de datos", "Upps, No te encuentro", MessageBoxButton.OK);
                     else if (response == "2")
                     {
                         MessageBox.Show($"Te encontramos en la Base de datos, a continuación crea una contraseña", "Upps, Debes Crear una Contraseña", MessageBoxButton.OK);
-                        Registro registro = new Registro(1, txtDocumento.Text);
+                        Registro registro = new Registro(2, txtDocumento.Text);
                         registro.ShowDialog();
                     }
                 }

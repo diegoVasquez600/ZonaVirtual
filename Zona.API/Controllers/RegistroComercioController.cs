@@ -50,7 +50,7 @@ namespace Zona.API.Controllers
         [Route("Registro")]
         public int Registro([FromBody] Comercio value)
         {
-            if (dBContext.Comercios.Any(cm => cm.ComercioCodigo.Equals(value.ComercioCodigo)))
+            if (dBContext.Comercios.Any(cm => cm.ComercioNit.Equals(value.ComercioNit)))
             {
                 var comercio = dBContext.Comercios.Where(cm => cm.ComercioNit == value.ComercioNit).FirstOrDefault();
                 if (comercio.ComercioPassword != null)

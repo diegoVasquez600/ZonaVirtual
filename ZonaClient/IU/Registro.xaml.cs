@@ -26,7 +26,9 @@ namespace ZonaClient.IU
         private readonly int _action;
         private readonly string _documento;
         DataStoreUsuario dataStoreUsuario = new DataStoreUsuario();
+        DataStoreComercio dataStoreComercio = new DataStoreComercio();
         Usuario usuario;
+        Comercio comercio;
         #endregion
 
         public Registro(int action, string documento)
@@ -75,7 +77,20 @@ namespace ZonaClient.IU
                  }
                 else if (_action == 2)
                 {
-
+                    comercio = new Comercio()
+                    {
+                        ComercioNit = txtDocumento.Text,
+                        ComercioPassword = txtPassword.Password
+                    };
+                    var response = await dataStoreComercio.RegisterComercioAsync(comercio);
+                    if (response == "1")
+                    {
+                        MessageBox.Show($"Registrado Correctamente, ya puedes iniciar sesión", "Felicitaciones", MessageBoxButton.OK);
+                        Close();
+                    }else if (response == "0")
+                    {
+                        MessageBox.Show($"Por alguna razon no pudimos registrarte, intentalo nuevamente", "Upps, ha ocurrido un error", MessageBoxButton.OK);
+                    }
                 }
             }
             else
