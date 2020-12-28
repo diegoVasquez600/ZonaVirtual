@@ -93,6 +93,16 @@
             Controller Pagos
             </summary>
         </member>
+        <member name="M:Zona.API.Controllers.PagosController.GetPagosUsuario(Zona.API.Models.Usuario)">
+            <summary>
+            Method GetPagosUsuario
+            </summary>
+            <param name="value"> recieve the Usuari Model</param>
+            <returns>A string with all the Pagos</returns>
+            <remarks>
+            GET api/Pagos/GetPagosUsuario
+            </remarks>
+        </member>
         <member name="T:Zona.API.Controllers.RegistroUsuarioController">
             <summary>
             Controller RegistroUsuario
