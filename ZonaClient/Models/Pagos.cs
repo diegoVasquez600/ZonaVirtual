@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZonaClient.Models
 {
-    public class Pagos
+    public class Pago
     {
         public string Trans_codigo { get; set; }
         public string Trans_fecha { get; set; }

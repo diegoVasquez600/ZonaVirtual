@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZonaClient.IU"
         mc:Ignorable="d"
-        Title="Nueva Transaccion" Height="248" Width="413">
+        Title="Nueva Transaccion" Height="399" Width="439">
     <Grid>
-        
+        <StackPanel Margin="0,0,0,24">
+            <Label Content="Medio de Pago" HorizontalAlignment="Center" Margin="10,5,0,0"/>
+            <ComboBox Name="CmbMedioPago" HorizontalAlignment="Center" Width="200" Text="Medio de Pago" Margin="10,5,0,5"/>
+            <Label Content="Ingresa el codigo del comercio" HorizontalAlignment="Center" Margin="10,5,0,5"/>
+            <TextBox HorizontalAlignment="Center" Width="200" Margin="10,0,0,0" Name="txtCodigoComercio"/>
+            <Label Content="Ingresa el monto a depositar" HorizontalAlignment="Center" Margin="10,5,0,5"/>
+            <TextBox HorizontalAlignment="Center" Width="200" Margin="10,5,0,5" Name="txtMonto"/>
+            <Label Content="Concepto" HorizontalAlignment="Center" Margin="10,5,0,5"/>
+            <TextBox HorizontalAlignment="Center" Height="68" Margin="10,5,10,5" Name="txtConcepto" Width="262"/>
+            <Button Content="Pagar" HorizontalAlignment="Center" Width="150" Margin="0,10,0,0" Name="buttonPagar" Click="buttonPagar_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

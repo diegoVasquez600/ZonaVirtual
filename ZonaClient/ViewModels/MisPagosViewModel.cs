@@ -15,7 +15,7 @@ namespace ZonaClient.ViewModels
         DataStorePago dataStorePago = new DataStorePago();
         private readonly string userIdentificacion;
         Usuario usuario = new Usuario();
-        readonly IEnumerable<Pagos> pagos;
+        readonly IEnumerable<Pago> pagos;
         #endregion
 
 
@@ -23,7 +23,7 @@ namespace ZonaClient.ViewModels
         /// <summary>
         /// Propertie PagosCollection is the collection of data from the response of Pagos
         /// </summary>
-        public ObservableCollection<Pagos> PagosCollection { get; set; }
+        public ObservableCollection<Pago> PagosCollection { get; set; }
         #endregion
 
         public MisPagosViewModel(string _userIdentificacion)
@@ -33,14 +33,14 @@ namespace ZonaClient.ViewModels
             
         }
 
-        private async Task<ObservableCollection<Pagos>> CargarPagosAsync(string _userIdentificacion)
+        private async Task<ObservableCollection<Pago>> CargarPagosAsync(string _userIdentificacion)
         {
-            PagosCollection = new ObservableCollection<Pagos>();
+            PagosCollection = new ObservableCollection<Pago>();
             usuario.UsuarioIdentificacion = _userIdentificacion;
             var response = await dataStorePago.GetPagosUsuario(usuario);
             foreach (var pago in response)
             {
-                PagosCollection.Add(new Pagos()
+                PagosCollection.Add(new Pago()
                 {
                     Trans_codigo = pago.Trans_codigo,
                     Trans_fecha = pago.Trans_fecha,

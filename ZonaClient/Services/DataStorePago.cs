@@ -10,11 +10,11 @@ using ZonaClient.Services.Interfaces;
 
 namespace ZonaClient.Services
 {
-    public class DataStorePago:IPago<Pagos>
+    public class DataStorePago:IPago<Pago>
     {
         #region Fields
         HttpClient client;
-        IEnumerable<Pagos> pagos;
+        IEnumerable<Pago> pagos;
         #endregion
         public DataStorePago()
         {
@@ -24,12 +24,12 @@ namespace ZonaClient.Services
             };
         }
 
-        public async Task<IEnumerable<Pagos>> GetPagosUsuario(Usuario usuario)
+        public async Task<IEnumerable<Pago>> GetPagosUsuario(Usuario usuario)
         {
             var serializedItem = JsonConvert.SerializeObject(usuario);
             var response = await client.PostAsync($"GetPagosUsuario", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
             var res = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<IEnumerable<Pagos>>(res);
+            return JsonConvert.DeserializeObject<IEnumerable<Pago>>(res);
         }
     }
 }
