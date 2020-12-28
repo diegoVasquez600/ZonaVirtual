@@ -12,7 +12,7 @@
             <TextBox x:Name="txtDocumento" HorizontalAlignment="Center" Width="200" IsEnabled="False" Margin="5"/>
             <Label Content="Contraseña" HorizontalAlignment="Center"/>
             <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Width="200" Margin="5"/>
-            <Button Content="Iniciar Sesión" Width="250" Margin="10"/>
+            <Button Content="Iniciar Sesión" Width="250" Margin="10" x:Name="LoginButton" Click="LoginButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

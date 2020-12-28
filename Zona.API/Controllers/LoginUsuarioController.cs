@@ -25,11 +25,11 @@ namespace Zona.API.Controllers
         /// </summary>
         /// <param name="value"></param>
         /// <remarks> 
-        /// Usage POST api/LoginUsuario
+        /// Usage POST api/LoginUsuario/Login
         /// </remarks> 
 
         [HttpPost]
-        [Route("LoginUsuario")]
+        [Route("Login")]
         public string LoginUsuario([FromBody] Usuario value)
         {
             if (dBContext.Usuarios.Any(usr => usr.UsuarioIdentificacion.Equals(value.UsuarioIdentificacion)))
@@ -44,12 +44,11 @@ namespace Zona.API.Controllers
                 {
                     return JsonConvert.SerializeObject(usuario);
                 }
-
                 else
-                    return JsonConvert.SerializeObject("Lo siento, Pusiste una Contraseña Incorrecta");
+                    return "2";
             }
             else
-                return JsonConvert.SerializeObject($"Usuario con Identificacion número {value.UsuarioIdentificacion} No encontrado");
+                return "0";
         }
     }
 }

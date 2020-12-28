@@ -39,7 +39,7 @@ namespace ZonaClient.ViewModels
         /// </remarks>
         public MainViewModel()
         {
-            _ = CargarDataAsync();
+            CargarDataAsync();
         }
 
         #endregion
@@ -51,11 +51,18 @@ namespace ZonaClient.ViewModels
         /// <returns>
         /// if the execution is correct returns and ObservableCollection of the model Prueba else returns Null
         /// </returns>
-        private async Task<ObservableCollection<Prueba>> CargarDataAsync()
+        private async void CargarDataAsync()
         {
-            var response = await dataStorePrueba.GetDataAsync();
-            await SaveDataAsync(response);
-            return PruebaCollection;
+            try
+            {
+                var response = await dataStorePrueba.GetDataAsync();
+                await SaveDataAsync(response);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+            }
         }
 
         private async Task SaveDataAsync(IEnumerable<Prueba> response)
@@ -72,16 +79,23 @@ namespace ZonaClient.ViewModels
                         ComercioCodigo = dt.Comercio_codigo,
                         ComericoNombre = dt.Comercio_nombre,
                         ComercioNit = dt.Comercio_nit,
-                        ComercioDireccion = dt.Comercio_direccion,
+                        ComercioDireccion = dt.Comercio_direccion
                     };
 
                     usuario = new Usuario()
                     {
                         UsuarioNombre = dt.Usuario_nombre,
                         UsuarioIdentificacion = dt.Usuario_identificacion,
-                        UsuarioEmail = dt.Usuario_email,
+                        UsuarioEmail = dt.Usuario_email
                     };
-
+                    // Hago esto porque todos lo valores en Medio pago retornaban 0
+                    int[] rndMedioPago = new int[5];
+                    rndMedioPago[0] = 0;
+                    rndMedioPago[1] = 29;
+                    rndMedioPago[2] = 32;
+                    rndMedioPago[3] = 41;
+                    rndMedioPago[4] = 42;
+                    Random rnd = new Random();
                     transaccion = new Transaccion()
                     {
                         TransCodigo = dt.Trans_codigo,
@@ -90,7 +104,7 @@ namespace ZonaClient.ViewModels
                         UsuarioIdentificacion = dt.Usuario_identificacion,
                         TransConcepto = dt.Trans_concepto,
                         TransFecha = dt.Trans_fecha,
-                        TransMedioPago = dt.Trans_medio_pago,
+                        TransMedioPago = rndMedioPago[rnd.Next(0, 4)],
                         TransTotal = dt.Trans_total
                     };
 

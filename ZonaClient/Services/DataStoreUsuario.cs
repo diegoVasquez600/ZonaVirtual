@@ -21,7 +21,7 @@ namespace ZonaClient.Services
         {
             client = new HttpClient
             {
-                BaseAddress = new Uri($"{App.AzureBackendUrl}Usuario/")
+                BaseAddress = new Uri($"{App.AzureBackendUrl}")
             };
             usuarios = new List<Usuario>();
         }
@@ -31,7 +31,7 @@ namespace ZonaClient.Services
         public async Task<string> AddUsuarioAsync(Usuario usuario)
         {
             var serializedItem = JsonConvert.SerializeObject(usuario);
-            var response = await client.PostAsync($"InsertUsuario", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            var response = await client.PostAsync($"Usuario/InsertUsuario", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
             return await response.Content.ReadAsStringAsync();
         }
 
@@ -50,9 +50,30 @@ namespace ZonaClient.Services
             throw new NotImplementedException();
         }
 
+        public async Task<string> LoginUsuarioAsync(Usuario usuario)
+        {
+            var serializedItem = JsonConvert.SerializeObject(usuario);
+            var response = await client.PostAsync($"LoginUsuario/Login", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task<string> RegisterUsuarioAsync(Usuario usuario)
+        {
+            var serializedItem = JsonConvert.SerializeObject(usuario);
+            var response = await client.PutAsync($"RegistroUsuario/Registro", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            return await response.Content.ReadAsStringAsync();
+        }
+
         public Task<string> UpdateUsuarioAsync(Usuario usuario)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<string> VerificateUsuarioAsync(Usuario usuario)
+        {
+            var serializedItem = JsonConvert.SerializeObject(usuario);
+            var response = await client.PostAsync($"RegistroUsuario/Verificacion", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            return await response.Content.ReadAsStringAsync();
         }
         #endregion
     }

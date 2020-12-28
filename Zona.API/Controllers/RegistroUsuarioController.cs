@@ -51,7 +51,6 @@ namespace Zona.API.Controllers
         [Route("Registro")]
         public int Registro([FromBody] Usuario value)
         {
-            Usuario user;
             if (dBContext.Usuarios.Any(usr => usr.UsuarioIdentificacion.Equals(value.UsuarioIdentificacion)))
             {
                 var usuario = dBContext.Usuarios.Where(usr => usr.UsuarioIdentificacion == value.UsuarioIdentificacion).FirstOrDefault();
@@ -61,8 +60,7 @@ namespace Zona.API.Controllers
                 }
                 else
                 {
-                    var find = dBContext.Usuarios.Find(value.IdUsuario);
-                    find.IdUsuario = value.IdUsuario;
+                    var find = dBContext.Usuarios.Find(usuario.IdUsuario);
                     find.UsuarioSalt = Convert.ToBase64String(Common.GetRandomSalt(16));
                     find.UsuarioPassword = Convert.ToBase64String(Common.SaltHashPassword(
                     Encoding.ASCII.GetBytes(value.UsuarioPassword), Convert.FromBase64String(find.UsuarioSalt)));
