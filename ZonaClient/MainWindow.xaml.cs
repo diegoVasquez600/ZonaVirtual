@@ -20,7 +20,9 @@ namespace ZonaClient
         /// </summary>
         #region Fields
         DataStoreUsuario dataStoreUsuario = new DataStoreUsuario();
+        DataStoreComercio dataStoreComercio = new DataStoreComercio();
         Usuario usuario = new Usuario();
+        Comercio comercio = new Comercio();
         #endregion
         public MainWindow()
         {
@@ -92,8 +94,21 @@ namespace ZonaClient
             {
                 if (txtDocumento.Text.ToString() != "")
                 {
-                    LoginComercio loginComercio = new LoginComercio(txtDocumento.Text.ToString());
-                    loginComercio.ShowDialog();
+                    comercio.ComercioNit = txtDocumento.Text;
+                    var response = await dataStoreComercio.VerificateComercioAsync(comercio);
+                    if (response == "1")
+                    {
+                        LoginComercio loginComercio = new LoginComercio(txtDocumento.Text.ToString());
+                        loginComercio.ShowDialog();
+                    }
+                    else if (response == "0")
+                        MessageBox.Show($"Al parecer el número de documento {txtDocumento.Text} no se encuentra en nuestra Base de datos", "Upps, No te encuentro", MessageBoxButton.OK);
+                    else if (response == "2")
+                    {
+                        MessageBox.Show($"Te encontramos en la Base de datos, a continuación crea una contraseña", "Upps, Debes Crear una Contraseña", MessageBoxButton.OK);
+                        Registro registro = new Registro(1, txtDocumento.Text);
+                        registro.ShowDialog();
+                    }
                 }
                 else
                 {

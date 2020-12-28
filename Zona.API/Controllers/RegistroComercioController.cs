@@ -23,9 +23,9 @@ namespace Zona.API.Controllers
         [Route("Verificacion")]
         public int Verificacion([FromBody] Comercio value)
         {
-            if (dBContext.Comercios.Any(cm => cm.ComercioCodigo.Equals(value.ComercioCodigo)))
+            if (dBContext.Comercios.Any(cm => cm.ComercioNit.Equals(value.ComercioNit)))
             {
-                var comercio = dBContext.Comercios.Where(cm => cm.ComercioCodigo == value.ComercioCodigo).FirstOrDefault();
+                var comercio = dBContext.Comercios.Where(cm => cm.ComercioNit == value.ComercioNit).FirstOrDefault();
                 if (comercio.ComercioPassword != null)
                 {
                     return 1;
@@ -52,13 +52,14 @@ namespace Zona.API.Controllers
         {
             if (dBContext.Comercios.Any(cm => cm.ComercioCodigo.Equals(value.ComercioCodigo)))
             {
-                var comercio = dBContext.Comercios.Where(cm => cm.ComercioCodigo == value.ComercioCodigo).FirstOrDefault();
+                var comercio = dBContext.Comercios.Where(cm => cm.ComercioNit == value.ComercioNit).FirstOrDefault();
                 if (comercio.ComercioPassword != null)
                 {
                     return 1;
                 }
                 else
                 {
+
                     var find = dBContext.Comercios.Find(comercio.ComercioCodigo);
                     find.ComercioSalt = Convert.ToBase64String(Common.GetRandomSalt(16));
                     find.ComercioPassword = Convert.ToBase64String(Common.SaltHashPassword(

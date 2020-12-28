@@ -21,7 +21,7 @@ namespace ZonaClient.Services
         {
             client = new HttpClient
             {
-                BaseAddress = new Uri($"{App.AzureBackendUrl}Comercio/")
+                BaseAddress = new Uri($"{App.AzureBackendUrl}")
             };
             comercios = new List<Comercio>();
         }
@@ -32,7 +32,7 @@ namespace ZonaClient.Services
         public async Task<string> AddComercioAsync(Comercio comercio)
         {
             var serializedItem = JsonConvert.SerializeObject(comercio);
-            var response = await client.PostAsync($"InsertComercio", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            var response = await client.PostAsync($"Comercio/InsertComercio", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
             return await response.Content.ReadAsStringAsync();
         }
 
@@ -51,9 +51,21 @@ namespace ZonaClient.Services
             throw new NotImplementedException();
         }
 
+        public Task<string> RegisterComercioAsync(Comercio comercio)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<string> UpdateComercioAsync(Comercio comercio)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<string> VerificateComercioAsync(Comercio comercio)
+        {
+            var serializedItem = JsonConvert.SerializeObject(comercio);
+            var response = await client.PostAsync($"RegistroComercio/Verificacion", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            return await response.Content.ReadAsStringAsync();
         }
         #endregion
     }
