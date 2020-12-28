@@ -21,12 +21,6 @@ namespace Zona.API.Controllers
         IEnumerable<Pagos> pagos = new List<Pagos>();
         ZonaDBContext dbContext = new ZonaDBContext();
         PagoDAO objDAO = new PagoDAO();
-        // GET: api/<PagosController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
         /// <summary>
         /// Method GetPagosUsuario
@@ -45,21 +39,13 @@ namespace Zona.API.Controllers
         }
 
         // POST api/<PagosController>
-        //[HttpPost]
-        public void Post([FromBody] string value)
+        [HttpGet]
+        [Route("GetPagosComercio")]
+        public string GetPagosComercio([FromBody] Comercio value)
         {
+            var pagosComercio = objDAO.GetPagosComercio(value.ComercioCodigo);
+            return JsonConvert.SerializeObject(pagosComercio);
         }
 
-        // PUT api/<PagosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<PagosController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

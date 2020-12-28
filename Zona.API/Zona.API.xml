@@ -103,6 +103,20 @@
             GET api/Pagos/GetPagosUsuario
             </remarks>
         </member>
+        <member name="M:Zona.API.Controllers.RegistroComercioController.Verificacion(Zona.API.Models.Comercio)">
+            <summary>
+            Usage  POST api/RegistroContoller/Verificacion
+            </summary>
+        </member>
+        <member name="M:Zona.API.Controllers.RegistroComercioController.Registro(Zona.API.Models.Comercio)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <remarks>
+            Usage PUT api/RegistroUsuario/Registro
+            </remarks>
+        </member>
         <member name="T:Zona.API.Controllers.RegistroUsuarioController">
             <summary>
             Controller RegistroUsuario

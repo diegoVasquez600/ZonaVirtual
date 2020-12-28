@@ -27,5 +27,18 @@ namespace Zona.API.DAO
             connection.CerrarConection();
             return table;
         }
+
+        public DataTable GetPagosComercio(int comercioCodigo)
+        {
+            command.Connection = connection.AbrirConection();
+            command.CommandText = "PagosComercio";
+            command.Parameters.AddWithValue("@comercio_codigo", comercioCodigo);
+            command.CommandType = CommandType.StoredProcedure;
+            Reader = command.ExecuteReader();
+            table.Load(Reader);
+            Reader.Close();
+            connection.CerrarConection();
+            return table;
+        }
     }
 }
