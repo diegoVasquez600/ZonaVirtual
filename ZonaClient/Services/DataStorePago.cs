@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +9,7 @@ using ZonaClient.Services.Interfaces;
 
 namespace ZonaClient.Services
 {
-    public class DataStorePago:IPago<Pago>
+    public class DataStorePago : IPago<Pago>
     {
         #region Fields
         HttpClient client;

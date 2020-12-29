@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using ZonaClient.Models;
 using ZonaClient.Services;
 
@@ -45,7 +33,8 @@ namespace ZonaClient.IU
             {
                 lblDocumento.Content = "Número de Identificación";
                 txtDocumento.Text = _documento;
-            }else if(_action == 2)
+            }
+            else if (_action == 2)
             {
                 lblDocumento.Content = "NIT";
                 txtDocumento.Text = _documento;
@@ -69,12 +58,12 @@ namespace ZonaClient.IU
                         UsuarioPassword = txtPassword.Password
                     };
                     var response = await dataStoreUsuario.RegisterUsuarioAsync(usuario);
-                    if(response == "1")
+                    if (response == "1")
                     {
                         MessageBox.Show($"Registrado Correctamente, ya puedes iniciar sesión", "Felicitaciones", MessageBoxButton.OK);
                         Close();
                     }
-                 }
+                }
                 else if (_action == 2)
                 {
                     comercio = new Comercio()
@@ -87,7 +76,8 @@ namespace ZonaClient.IU
                     {
                         MessageBox.Show($"Registrado Correctamente, ya puedes iniciar sesión", "Felicitaciones", MessageBoxButton.OK);
                         Close();
-                    }else if (response == "0")
+                    }
+                    else if (response == "0")
                     {
                         MessageBox.Show($"Por alguna razon no pudimos registrarte, intentalo nuevamente", "Upps, ha ocurrido un error", MessageBoxButton.OK);
                     }

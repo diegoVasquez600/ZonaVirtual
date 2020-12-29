@@ -1,9 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Zona.API.DAO
 {
@@ -13,7 +9,7 @@ namespace Zona.API.DAO
         private ConnectionDB connection = new ConnectionDB();
         SqlDataReader Reader;
         DataTable table = new DataTable();
-        SqlCommand command = new SqlCommand(); 
+        SqlCommand command = new SqlCommand();
         #endregion
         public DataTable GetPagosUsuario(string _usuarioIdentificacion)
         {

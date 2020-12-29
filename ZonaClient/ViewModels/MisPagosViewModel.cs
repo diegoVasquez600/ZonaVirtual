@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using ZonaClient.Models;
 using ZonaClient.Services;
 
 namespace ZonaClient.ViewModels
 {
-    public class MisPagosViewModel:BaseViewModel
+    public class MisPagosViewModel : BaseViewModel
     {
         #region Fields
         DataStorePago dataStorePago = new DataStorePago();
@@ -30,7 +27,7 @@ namespace ZonaClient.ViewModels
         {
             userIdentificacion = _userIdentificacion;
             _ = CargarPagosAsync(userIdentificacion);
-            
+
         }
 
         private async Task<ObservableCollection<Pago>> CargarPagosAsync(string _userIdentificacion)
@@ -49,7 +46,7 @@ namespace ZonaClient.ViewModels
                     usuario_identificacion = pago.usuario_identificacion,
                     nombre_medio_pago = pago.nombre_medio_pago,
                     estado = pago.estado
-                }); 
+                });
             }
             return PagosCollection;
         }
