@@ -51,6 +51,13 @@ namespace ZonaClient.Services
             throw new NotImplementedException();
         }
 
+        public async Task<string> LoginComercioAsync(Comercio comercio)
+        {
+            var serializedItem = JsonConvert.SerializeObject(comercio);
+            var response = await client.PostAsync($"LoginComercio/Login", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            return await response.Content.ReadAsStringAsync();
+        }
+
         public async Task<string> RegisterComercioAsync(Comercio comercio)
         {
             var serializedItem = JsonConvert.SerializeObject(comercio);

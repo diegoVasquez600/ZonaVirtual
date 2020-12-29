@@ -7,21 +7,26 @@ namespace ZonaClient.IU
     /// </summary>
     public partial class DashBoard : Window
     {
-        private readonly int _action;
+        private readonly int action;
 
-        public DashBoard(int action)
+        public DashBoard(int _action)
         {
             InitializeComponent();
             ValidateUser();
-            _action = action;
+            action = _action;
         }
 
         #region Methods
         private void ValidateUser()
         {
-            if (_action == 1)
+            if (action == 1)
             {
                 PagosButton.Visibility = Visibility.Visible;
+            }
+            else if (action == 2)
+            {
+                MisGananciasButton.Visibility = Visibility.Visible;
+                MisTransaccionesButton.Visibility = Visibility.Visible;
             }
         }
 
@@ -31,8 +36,13 @@ namespace ZonaClient.IU
 
         private void PagosButton_Click(object sender, RoutedEventArgs e)
         {
-            var usuarioIdentificacion = Application.Current.Properties["usuarioIdentificacion"].ToString();
-            frame.Content = new MisPagos(usuarioIdentificacion);
+            if (action == 1)
+            {
+                var usuarioIdentificacion = Application.Current.Properties["usuarioIdentificacion"].ToString();
+                frame.Content = new MisPagos(usuarioIdentificacion);
+            }
+            else
+                return;
         }
 
         #endregion
